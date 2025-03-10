@@ -2,6 +2,7 @@
   font-family: Inter, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  padding: 42px;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -14,39 +15,64 @@
 }
 
 h1 {
-  font-weight: 800;
+  font-family: 'Tactic Sans';
+  font-style: italic;
+  font-weight: 900;
+  font-size: 32px;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  place-items: center;
+  min-width: 204px;
+  height: 56px;
+  border-radius: 4px;
+  background-color: #EB0237;
+  
 }
 
 #matchList {
-  /* background-color: red; */
 }
 
 .matchListItem {
   display: flex;
   flex-direction: column;
+  background-color: #0B0E12;
 }
 .teamContainer {
   display: flex;
   justify-content: space-between;
-  /* gap: 10px; */
 }
 .homeTeam,
 .awayTeam {
-  /* background-color: aqua; */
 
 }
 
 .finished,
 .ongoing,
-.sceduled {
+.scheduled {
   display: grid;
   place-items: center;
-  width: 92px;
+  min-width: 92px;
   height: 27px;
   border-radius: 4px;
 }
 .finished {
   background-color: #EB0237;
+}
+.ongoing {
+  background-color: #43AD28;
+}
+.scheduled {
+  background-color: #EB6402;
 }
 
 @media (prefers-reduced-motion: no-preference) {

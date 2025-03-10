@@ -1,7 +1,10 @@
+import { useState } from "react";
+import Collapse from "./Collapse";
+import KillCount from "./KillCount";
 import ScoreTable from "./ScoreTable";
 import StatusCard from "./StatusCard";
 
-interface Player {
+export interface Player {
     username: string;
     kills: number;
 }
@@ -25,22 +28,52 @@ export interface Match {
 }
 
 const MatchListItem = ({ match }: { match: Match }) => {
+    const [ isOpen, setIsOpen ] = useState(false)
+    
     return (
         <div
         className="matchListItem"
-        style={{ 
+        onClick={()=>{setIsOpen(!isOpen)}}
+        style={{
+            cursor:'pointer',
             margin: '30px 0px', 
             padding: '20px', 
-            border: '1px solid #ccc', 
-            borderRadius: '10px' 
+            borderRadius: '4px' 
         }}>
-            <StatusCard status={match.status} />
-            <ScoreTable left={match.homeScore} right={match.awayScore}/>
-            <img src="test-match/teamLogoPlaceholder.png" alt="team_logo" />
+            <div
+            style={{
+                display:'flex',
+                justifyContent:'space-between',
+                alignItems:'center',
+                gap:'14px'
+            }}
+            >
+                <img style={{width:'50px', height:'50px'}} src="teamLogoPlaceholder.png" alt="team_logo" />
+                <strong style={{flexGrow:1}} >{match.homeTeam.name}</strong>
+                <div
+                style={{
+                    display:'flex',
+                    flexDirection:'column',
+                    alignItems:'center',
+                }}
+                >
+                    <ScoreTable left={match.homeScore} right={match.awayScore}/>
+                    <StatusCard status={match.status} />
+                </div>
+                <strong style={{flexGrow:1, textAlign:'right'}} >{match.awayTeam.name}</strong>
+                <img style={{width:'50px', height:'50px'}} src="teamLogoPlaceholder.png" alt="team_logo" />
+                
+                <svg style={{
+                    
+                    transition: "transform 0.3s ease",
+                    transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
 
-            <p>
-                <strong>{match.homeTeam.name}</strong> ({match.homeScore}) vs ({match.awayScore}) <strong>{match.awayTeam.name}</strong>
-            </p>
+                }} width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M3 6L10 13L17 6" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <Collapse isOpen={isOpen}>
 
             <div className="teamContainer">
                 {/* Домашняя команда */}
@@ -48,14 +81,7 @@ const MatchListItem = ({ match }: { match: Match }) => {
                     <h4>{match.homeTeam.name} (Место #{match.homeTeam.place})</h4>
                     <p><strong>Очки:</strong> {match.homeTeam.points}</p>
                     <p><strong>Всего убийств:</strong> {match.homeTeam.total_kills}</p>
-                    <h5>Игроки:</h5>
-                    <ul>
-                        {match.homeTeam.players.map(player => (
-                            <li key={player.username}>
-                                {player.username} - {player.kills} убийств
-                            </li>
-                        ))}
-                    </ul>
+                        {match.homeTeam.players.map(player => <KillCount player={ player } />)}
                 </div>
 
                 {/* Гостевая команда */}
@@ -74,6 +100,7 @@ const MatchListItem = ({ match }: { match: Match }) => {
                 </div>
 
             </div>
+            </Collapse>
         </div>
     );
 };

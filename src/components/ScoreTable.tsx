@@ -6,7 +6,11 @@ interface ScoreTableProps {
 const ScoreTable = ( { left, right }: ScoreTableProps) => {
     return (
         <div>
-            <span>{left}:{right}</span>
+            <span
+            style={{fontSize:'20px',fontWeight:'900'}}
+            >
+                {left}:{right}
+            </span>
         </div>
     )
 }

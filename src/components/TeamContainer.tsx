@@ -1,9 +1,7 @@
-import { Team } from "./MatchListItem"
-
-const TeamContainer = ({ team }: { team: Team }) => {
+const TeamContainer = () => {
     return (
         <div
-        className="teamContainer"
+        className=""
         >
 
         </div>
