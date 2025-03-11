@@ -19,6 +19,24 @@ h1 {
   font-style: italic;
   font-weight: 900;
   font-size: 32px;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.errorLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #0F1318;
+  padding: 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.alertIcon {
+  flex-shrink: 0;
 }
 
 button {
@@ -36,13 +54,24 @@ button {
   height: 56px;
   border-radius: 4px;
   background-color: #EB0237;
-  
+  transition: 0.3s;
+}
+.refreshIcon {
+  transition: 0.3s;
+}
+button:hover .refreshIcon {
+  transform: rotate(-90deg);
 }
 
-#matchList {
+.matchList {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .matchListItem {
+  margin: 0;
   display: flex;
   flex-direction: column;
   background-color: #0B0E12;
@@ -56,14 +85,20 @@ button {
 
 }
 
-.finished,
-.ongoing,
-.scheduled {
+.scoreTable {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.statusCard {
+  box-sizing: border-box;
+  padding: 0px 5px;
   display: grid;
   place-items: center;
   min-width: 92px;
   height: 27px;
   border-radius: 4px;
+  font-size: 12px;
 }
 .finished {
   background-color: #EB0237;
@@ -73,10 +108,4 @@ button {
 }
 .scheduled {
   background-color: #EB6402;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }

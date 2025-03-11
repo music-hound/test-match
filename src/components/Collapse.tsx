@@ -10,6 +10,7 @@ const Collapse = ({ isOpen, children }: CollapseProps) => {
 
   return (
     <div
+    onClick={ (e) => e.stopPropagation() }
       style={{
         overflow: "hidden",
         transition: "height 0.3s ease",

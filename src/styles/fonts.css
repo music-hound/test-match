@@ -4,6 +4,11 @@
     font-weight: 600;
 }
 @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter/Inter-Medium.otf');
+    font-weight: 500;
+}
+@font-face {
     font-family: 'Tactic Sans';
     src: url('/fonts/TacticSans/TacticSans-BlkIt.otf');
     font-weight: 900;

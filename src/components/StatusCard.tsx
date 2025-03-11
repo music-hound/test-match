@@ -5,7 +5,12 @@ interface StatusCardProps {
 const StatusCard = ({ status }: StatusCardProps) => {
     return (
         <div className={`statusCard ${status.toLowerCase()}`}>
-            <span>{status}</span>
+            <span>
+                {
+                    status === 'Finished' ? status :
+                    ( status === 'Ongoing' ? "Live" : 'Match preparing')
+                }
+            </span>
         </div>
     )
 }
