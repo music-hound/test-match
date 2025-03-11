@@ -1,25 +1,12 @@
-import { useQuery } from '@tanstack/react-query'
 import { Match } from './components/MatchListItem'
-import './styles/fonts.css';
-import './styles/main.css';
-import './styles/animation.css';
 import MatchListItem from './components/MatchListItem';
 import LoadingBar from './components/LoadingBar';
 import ErrorLabel from './components/ErrorLabel';
+import { useGetMatchesQuery } from './features/matchTrackerApi';
+
 function App() {
 
-  const { data, isLoading, isFetching, isError, refetch } = useQuery({
-    queryKey: ['matchTracker'],
-    queryFn: async () => {
-        const res = await fetch(import.meta.env.VITE_API_URL);
-        if (!res.ok) {
-          throw new Error(`Ошибка загрузки: ${res.status} ${res.statusText}`);
-        }
-        return res.json();
-    },
-    refetchOnWindowFocus: false,
-    throwOnError: true,
-  });
+  const { data, isLoading, isFetching, isError, refetch } = useGetMatchesQuery();
 
   return (
     <>
@@ -53,11 +40,13 @@ function App() {
         </button>
       </div>
       <div>
-            {!isLoading && !isFetching && !isError && (
+            {!isLoading && !isFetching && !isError && data && (
                 <div className={'matchList'}>
-                    {data.data.matches.map((match: Match) => (
-                        <MatchListItem key={match.title} match={match} />
-                    ))}
+                    {
+                      data.data.matches.map((match: Match) => (
+                          <MatchListItem key={match.title} match={match} />
+                      ))
+                    }
                 </div>
             )}
         </div>
