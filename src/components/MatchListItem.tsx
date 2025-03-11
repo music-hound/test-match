@@ -34,10 +34,7 @@ const MatchListItem = ({ match }: { match: Match }) => {
         <div
         className="matchListItem"
         onClick={()=>{setIsOpen(!isOpen)}}
-        style={{
-            padding: '16px', 
-            borderRadius: '4px' 
-        }}>
+        >
             <div
             style={{
                 cursor:'pointer',

@@ -7,12 +7,29 @@ interface TeamDetailsProps {
 
 const TeamDetails = ( { team } : TeamDetailsProps ) => {
     return (
-        <div className="homeTeam">
-                    <h4>{team.name} (Место #{team.place})</h4>
-                    <p><strong>Очки:</strong> {team.points}</p>
-                    <p><strong>Всего убийств:</strong> {team.total_kills}</p>
-                        {team.players.map( (player : Player) => <KillCount player={ player } />)}
+        <div>
+            <div className="detailsGrid">
+                {
+                team.players.map(
+                    (player : Player) => <KillCount player={ player } />
+                    )
+                }
+                <div className='teamDetails'>
+                    <div style={{display:'flex', gap:'8px'}}>
+                        <span>Points:</span>
+                        <span style={{ color:'#fff'}}>{team.points}</span>
+                    </div>
+                    <div style={{display:'flex', gap:'8px'}}>
+                        <span>Место:</span>
+                        <span style={{ color:'#fff'}}>{team.place}</span>
+                    </div>
+                    <div style={{display:'flex', gap:'8px'}}>
+                        <span>Всего убийств:</span>
+                        <span style={{ color:'#fff'}}>{team.total_kills}</span>
+                    </div>
                 </div>
+            </div>
+        </div>
     )
 }
 

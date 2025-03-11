@@ -6,9 +6,12 @@ interface KillCountProps {
 
 const KillCount = ( { player }: KillCountProps) => {
     return (
-        <span>
-            {player.username} - {player.kills} убийств
-        </span>
+        <div className="killCount">
+            <img src="avatar.png"/>
+            <span style={{flexGrow:1}}>{player.username}</span>
+            <span className="grayLabel">Убийств:</span>
+            <span style={{fontSize:'16px'}}>{player.kills}</span>
+        </div>
     )
 }
 

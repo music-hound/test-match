@@ -75,14 +75,44 @@ button:hover .refreshIcon {
   display: flex;
   flex-direction: column;
   background-color: #0B0E12;
+  padding: 16px; 
+  border-radius: 4px;
 }
 .teamContainer {
+  padding-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.detailsGrid {
+  display: grid;
+  gap: 8px;
+}
+
+.detailsGrid > *:nth-child(4) {
+  grid-column: span 3;
+}
+
+.killCount {
+  background-color: #101318;
+  border-radius: 4px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 0px 24px;
+  height: 52px;
 }
-.homeTeam,
-.awayTeam {
 
+.teamDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #FAFAFA66;
+  background-color: #101318;
+  padding: 0px 24px;
+  height: 52px;
 }
 
 .scoreTable {
