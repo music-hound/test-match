@@ -11,7 +11,7 @@ const TeamDetails = ( { team } : TeamDetailsProps ) => {
             <div className="detailsGrid">
                 {
                 team.players.map(
-                    (player : Player) => <KillCount player={ player } />
+                    (player : Player, index:number) => <KillCount key={index} player={ player } />
                     )
                 }
                 <div className='teamDetails'>

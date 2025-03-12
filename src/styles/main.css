@@ -139,3 +139,14 @@ button:hover .refreshIcon {
 .scheduled {
   background-color: #EB6402;
 }
+
+.pulsing-circle {
+  flex-shrink: 0;
+  margin: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+

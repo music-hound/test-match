@@ -1,18 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { matchTrackerApi } from '../features/matchTrackerApi';
-import { api } from "./apiSlice";
+import reducer from './reducer'
 
 export const store = configureStore({
-  
   reducer: { 
+    reducer,
     [matchTrackerApi.reducerPath]: matchTrackerApi.reducer,
-    [api.reducerPath]: api.reducer,
   },
   
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
-    .concat(matchTrackerApi.middleware)
-    .concat(api.middleware),
+    .concat(matchTrackerApi.middleware),
 
 });
 
