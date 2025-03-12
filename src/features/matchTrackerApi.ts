@@ -24,7 +24,7 @@ export interface Player {
   kills: number;
 }
 
-interface Matches {
+export interface Matches {
   matches: Match[];
 }
 
