@@ -3,6 +3,7 @@ import { matchTrackerApi } from '../features/matchTrackerApi';
 import { api } from "./apiSlice";
 
 export const store = configureStore({
+  
   reducer: { 
     [matchTrackerApi.reducerPath]: matchTrackerApi.reducer,
     [api.reducerPath]: api.reducer,

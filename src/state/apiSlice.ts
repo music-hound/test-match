@@ -6,7 +6,7 @@ export const api = createApi({
     endpoints: (builder) => ({
         getLiveData: builder.query<string[], void>({
             queryFn: () => ({ data: [] }),
-            async onCacheEntryAdded(arg, { updateCachedData, cacheDataLoaded, cacheEntryRemoved }) {
+            async onCacheEntryAdded(_arg, { updateCachedData, cacheDataLoaded, cacheEntryRemoved }): Promise<void> {
                 const socket = new WebSocket(import.meta.env.VITE_WS_URL);
 
                 try {
