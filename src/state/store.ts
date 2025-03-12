@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { matchTrackerApi } from '../features/matchTrackerApi'; // Импортируем наш API
+import { matchTrackerApi } from '../features/matchTrackerApi';
 import reducer from './reducer';
 
 export const store = configureStore({
