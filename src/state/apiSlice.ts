@@ -2,12 +2,12 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
     reducerPath: "api",
-    baseQuery: fetchBaseQuery({ baseUrl: "https://example.com/api" }),
+    baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API_URL }),
     endpoints: (builder) => ({
         getLiveData: builder.query<string[], void>({
             queryFn: () => ({ data: [] }),
             async onCacheEntryAdded(arg, { updateCachedData, cacheDataLoaded, cacheEntryRemoved }) {
-                const socket = new WebSocket("wss://example.com/socket");
+                const socket = new WebSocket(import.meta.env.VITE_WS_URL);
 
                 try {
                     await cacheDataLoaded;
