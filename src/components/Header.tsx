@@ -1,6 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ErrorLabel from "./ErrorLabel";
 import { RootState } from "../state/store";
+import CustomSelect, { Option } from "./CustomSelect";
+import { filterChange } from "../state/filterSlice";
+
+const options : Option[] = [
+    { label: "Все статусы", value: '' },
+    { label: "Live", value: "Ongoing" },
+    { label: "Finished", value: "Finished" },
+    { label: "Match preparing", value: "Scheduled" },
+  ];
 
 interface HeaderProps {
     isError : boolean,
@@ -8,7 +17,10 @@ interface HeaderProps {
 }
 
 const Header = ( {isError, refetch} : HeaderProps ) => {
-    const isOffline = useSelector((state : RootState) => state.reducer.error);
+
+    const isOffline = useSelector((state : RootState) => state.reducer.error.isOffline);
+    const filterSelect = useSelector((state : RootState) => state.reducer.filter.filterSelect);
+    const dispatch = useDispatch();
 
     return (
         <div
@@ -19,9 +31,24 @@ const Header = ( {isError, refetch} : HeaderProps ) => {
         gap:'12px',
         }}
         >
+            <div 
+            style={{
+                flexGrow: 1,
+                display:'flex',
+                alignItems:'center',
+                gap:'24px'
+            }}>
             <h1>
             Match Tracker
             </h1>
+
+            <CustomSelect
+            options={options}
+            value={filterSelect}
+            onChange={(value)=>{dispatch(filterChange(value))}}
+            placeholder="Все статусы"
+            />
+            </div>
 
             <div
             style={{ backgroundColor: isOffline ? '#EB0237' : '#43AD28' , }}

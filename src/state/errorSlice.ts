@@ -2,9 +2,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const errorSlice = createSlice({
   name: "errorSlice",
-  initialState: false,
+  initialState: { isOffline : false },
   reducers: {
-    toggle_error: (_state, action: PayloadAction<boolean>) => action.payload
+    toggle_error: (state, action: PayloadAction<boolean>) => {
+      state.isOffline = action.payload
+    }
   },
 });
 
