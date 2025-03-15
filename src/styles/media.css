@@ -39,15 +39,43 @@
     header {
         flex-direction: column;
     }
+    button {
+        width: 100%;
+    }
 }
 
 @media (max-width: 640px) {
     :root {
         padding: 18px;
+        font-size: 14px;
     }
-}
-
-@media (max-width: 428px) {
+    .gapMaker {
+        display: none;
+    }
+    .select_button_block {
+        display: flex;
+        gap: 8px;
+    }
+    .killCount {
+        padding: 8px 12px;
+    }
+    .teamContainer {
+        gap: 12px;
+    }
+    .player_creds img {
+        width: 32px;
+        height: 32px;
+    }
+    .teamLogo {
+        width: 28px;
+        height: 28px;
+    }
+    .counter-container {
+        font-size: 14px;
+    }
+    .detailsGrid {
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 375px) {

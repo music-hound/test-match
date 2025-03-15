@@ -44,7 +44,7 @@ const MatchListItem = ({ match }: { match: Match }) => {
                 gap:'14px'
             }}
             >
-                <img style={{width:'50px', height:'50px'}} src="teamLogoPlaceholder.png" alt="team_logo" />
+                <img className="teamLogo" src="teamLogoPlaceholder.png" alt="team_logo" />
                 <strong style={{flexGrow:1}} >{match.homeTeam.name}</strong>
                 
                 <div
@@ -60,7 +60,7 @@ const MatchListItem = ({ match }: { match: Match }) => {
                 </div>
 
                 <strong style={{flexGrow:1, textAlign:'right'}} >{match.awayTeam.name}</strong>
-                <img style={{width:'50px', height:'50px'}} src="teamLogoPlaceholder.png" alt="team_logo" />
+                <img className="teamLogo" src="teamLogoPlaceholder.png" alt="team_logo" />
                 
                 <svg className="arrow_side" style={{
                     flexShrink: 0,

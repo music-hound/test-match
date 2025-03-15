@@ -56,3 +56,10 @@
   background: #11161D;
   color: #FFF;
 }
+
+@media (max-width: 840px) {
+  .custom-select {
+    width: 100%;
+  }
+  
+}
