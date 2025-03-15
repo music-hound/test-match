@@ -1,3 +1,4 @@
+import CounterFlip from "./CounterFlip";
 import { Player } from "./MatchListItem";
 
 interface KillCountProps {
@@ -7,10 +8,15 @@ interface KillCountProps {
 const KillCount = ( { player }: KillCountProps) => {
     return (
         <div className="killCount">
-            <img src="avatar.png"/>
-            <span style={{flexGrow:1}}>{player.username}</span>
-            <span className="grayLabel">Убийств:</span>
-            <span style={{fontSize:'16px'}}>{player.kills}</span>
+            <div className="player_creds">
+                <img src="avatar.png"/>
+                <span style={{flexGrow:1, color:'#fafafa'}}>{player.username}</span>
+            </div>
+
+            <div className="player_kills">
+                <span style={{color: '#FAFAFA66', fontSize:'14px'}}>Убийств:</span>
+                <CounterFlip>{player.kills}</CounterFlip>
+            </div>
         </div>
     )
 }

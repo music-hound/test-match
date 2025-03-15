@@ -1,3 +1,5 @@
+import CounterFlip from "./CounterFlip";
+
 interface ScoreTableProps {
     left: number;
     right: number;
@@ -6,7 +8,7 @@ interface ScoreTableProps {
 const ScoreTable = ( { left, right }: ScoreTableProps) => {
     return (
         <div className="scoreTable">
-            {left}:{right}
+            <CounterFlip>{left}</CounterFlip>:<CounterFlip>{right}</CounterFlip>
         </div>
     )
 }

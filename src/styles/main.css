@@ -14,6 +14,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
 h1 {
   font-family: 'Tactic Sans';
   font-style: italic;
@@ -77,11 +84,33 @@ button:hover .refreshIcon {
   padding: 16px; 
   border-radius: 4px;
 }
+
+.arrow_center {
+  display: none;
+  justify-content: center;
+  margin-top: 18px;
+}
+
 .teamContainer {
   padding-top: 32px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
+}
+
+.versus_container{
+  display: none;
+  align-items: center;
+}
+
+.versus_line {
+  width: 100%;
+  border-top: 1px solid #13181F;
+}
+
+.versus {
+  padding: 0px 20px;
+  color: #313A47;
 }
 
 .detailsGrid {
@@ -100,23 +129,38 @@ button:hover .refreshIcon {
   justify-content: space-between;
   align-items: center;
   gap: 8px;
-  padding: 0px 24px;
-  height: 52px;
+  padding: 8px 24px;
+}
+.player_creds,
+.player_kills {
+  display: flex;
+  align-items: center;
+}
+.player_creds {
+  gap: 8px;
 }
 
 .teamDetails {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   color: #FAFAFA66;
+  justify-content: space-evenly;
   background-color: #101318;
   padding: 0px 24px;
   height: 52px;
 }
 
+.vertical-divider {
+  width: 2px;
+  height: -webkit-fill-available;
+  background-color: #141A21;
+  margin: 18px 0px;
+}
+
 .scoreTable {
   font-size: 20px;
   line-height: 24px;
+  display: flex;
 }
 
 .statusCard {

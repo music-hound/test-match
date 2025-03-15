@@ -1,0 +1,50 @@
+.counter-container {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    overflow: hidden;
+  }
+  
+  .counter-container span {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .counter-container .flip-out {
+    transform: translateY(100%);
+    opacity: 0;
+    animation: flipOut 0.3s ease-in-out;
+  }
+  
+  .counter-container .flip-in {
+    transform: translateY(0%);
+    opacity: 1;
+    animation: flipIn 0.3s ease-in-out;
+  }
+  
+  @keyframes flipOut {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes flipIn {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

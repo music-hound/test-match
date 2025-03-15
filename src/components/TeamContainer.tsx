@@ -1,8 +1,6 @@
 const TeamContainer = () => {
     return (
-        <div
-        className=""
-        >
+        <div className="">
 
         </div>
     )

@@ -1,3 +1,4 @@
+import CounterFlip from './CounterFlip';
 import KillCount from './KillCount';
 import { Team, Player } from './MatchListItem';
 
@@ -17,15 +18,17 @@ const TeamDetails = ( { team } : TeamDetailsProps ) => {
                 <div className='teamDetails'>
                     <div style={{display:'flex', gap:'8px'}}>
                         <span>Points:</span>
-                        <span style={{ color:'#fff'}}>{team.points}</span>
+                        <CounterFlip>{team.points}</CounterFlip>
                     </div>
+                    <div className="vertical-divider" />
                     <div style={{display:'flex', gap:'8px'}}>
                         <span>Место:</span>
-                        <span style={{ color:'#fff'}}>{team.place}</span>
+                        <CounterFlip>{team.place}</CounterFlip>
                     </div>
+                    <div className="vertical-divider" />
                     <div style={{display:'flex', gap:'8px'}}>
                         <span>Всего убийств:</span>
-                        <span style={{ color:'#fff'}}>{team.total_kills}</span>
+                        <CounterFlip>{team.total_kills}</CounterFlip>
                     </div>
                 </div>
             </div>

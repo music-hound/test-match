@@ -62,7 +62,7 @@ const MatchListItem = ({ match }: { match: Match }) => {
                 <strong style={{flexGrow:1, textAlign:'right'}} >{match.awayTeam.name}</strong>
                 <img style={{width:'50px', height:'50px'}} src="teamLogoPlaceholder.png" alt="team_logo" />
                 
-                <svg style={{
+                <svg className="arrow_side" style={{
                     flexShrink: 0,
                     transition: "transform 0.3s ease",
                     transform: isOpen ? "rotate(180deg) scale(1)" : "rotate(0deg) scale(0.9)",
@@ -76,10 +76,29 @@ const MatchListItem = ({ match }: { match: Match }) => {
 
             <div className="teamContainer">
                 <TeamDetails team={match.homeTeam}/>
+                <div className="versus_container">
+                    <div className="versus_line"></div>
+                    <div className="versus">VS</div>
+                    <div className="versus_line"></div>
+                </div>
+                
                 <TeamDetails team={match.awayTeam}/>
             </div>
 
             </Collapse>
+
+            <div className="arrow_center">
+
+                <svg style={{
+                    flexShrink: 0,
+                    transition: "transform 0.3s ease",
+                    transform: isOpen ? "rotate(180deg) scale(1)" : "rotate(0deg) scale(0.9)",
+
+                }} width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M3 6L10 13L17 6" stroke="#FAFAFA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+            </div>
+
         </div>
     );
 };

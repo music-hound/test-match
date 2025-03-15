@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import App from './App.tsx'
 import './styles/fonts.css';
 import './styles/main.css';
+import './styles/media.css';
 import './styles/animation.css';
 import store from './state/store.ts';
 

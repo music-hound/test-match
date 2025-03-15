@@ -1,0 +1,54 @@
+@media (max-width: 1720px) {
+    .player_creds {
+        flex-direction: column;
+    }
+    .killCount {
+        padding: 15px 24px;
+    }
+
+}
+
+@media (max-width: 1460px) {
+    .player_creds {
+        flex-direction: row;
+    }
+    .killCount {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1140px) {
+    .teamContainer {
+        grid-template-columns: 1fr;
+    }
+    .killCount {
+        justify-content: center;
+    }
+    .versus_container {
+        display: flex;
+    }
+    .arrow_center {
+        display: flex;
+    }
+    .arrow_side {
+        display: none;
+    }
+}
+
+@media (max-width: 840px) {
+    header {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 428px) {
+}
+
+@media (max-width: 375px) {
+}
