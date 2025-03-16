@@ -53,8 +53,9 @@
         display: none;
     }
     .select_button_block {
-        display: flex;
-        gap: 8px;
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
     }
     .killCount {
         padding: 8px 12px;
@@ -78,5 +79,8 @@
     }
 }
 
-@media (max-width: 375px) {
-}
+/* @media (max-width: 375px) {
+    button {
+        font-size: 12px;
+    }
+} */

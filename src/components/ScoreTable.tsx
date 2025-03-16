@@ -1,4 +1,4 @@
-import CounterFlip from "./CounterFlip";
+import CounterFlip from "./reusable/CounterFlip";
 
 interface ScoreTableProps {
     left: number;

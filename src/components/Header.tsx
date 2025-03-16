@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import ErrorLabel from "./ErrorLabel";
 import { RootState } from "../state/store";
-import CustomSelect, { Option } from "./CustomSelect";
+import CustomSelect, { Option } from "./reusable/CustomSelect";
 import { filterChange } from "../state/filterSlice";
 
 const options : Option[] = [

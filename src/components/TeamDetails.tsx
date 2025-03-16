@@ -1,4 +1,4 @@
-import CounterFlip from './CounterFlip';
+import CounterFlip from './reusable/CounterFlip';
 import KillCount from './KillCount';
 import { Team, Player } from './MatchListItem';
 

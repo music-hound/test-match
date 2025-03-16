@@ -16,7 +16,6 @@
 
 header {
     display: flex;
-    /* width: 100%; */
     align-items: center;
     gap: 12px;
 }
@@ -32,6 +31,7 @@ header {
 }
 
 .select_button_block {
+  flex-grow: 1;
   display: flex;
   align-items: center;
   gap: 8px;
