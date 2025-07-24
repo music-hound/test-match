@@ -13,5 +13,8 @@ Perfect for monitoring multiple matches with a responsive and intuitive UI.
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-<h3>Preview</h3>
+<h3>Preview:</h3>
+<img src="/public/preview.png" />
+
+<h3>Preview mobile:</h3>
 <img src="/public/preview.png" />
