@@ -15,8 +15,6 @@ Perfect for monitoring multiple matches with a responsive and intuitive UI.
 
 **Live Demo:** [https://music-hound.github.io/test-match](https://music-hound.github.io/test-match)
 
-<img style="width:40%" src="/public/mobile_preview.png" />
-
 <h3>💻 Preview desktop:</h3>
 <p align="center">
   <img src="/public/preview.png" width="80%"/>
