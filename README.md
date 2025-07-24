@@ -17,4 +17,4 @@ Perfect for monitoring multiple matches with a responsive and intuitive UI.
 <img src="/public/preview.png" />
 
 <h3>Preview mobile:</h3>
-<img src="/public/preview.png" />
+<img src="/public/preview_mobile.png" />
